@@ -29,7 +29,7 @@
 
    <!-- favicons
 	================================================== -->
-	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicons/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicons/apple-touch-icon-57x57.png" />
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicons/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicons/apple-touch-icon-72x72.png" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicons/apple-touch-icon-144x144.png" />
@@ -49,7 +49,6 @@
 <meta name="msapplication-square150x150logo" content="favicons/mstile-150x150.png" />
 <meta name="msapplication-wide310x150logo" content="favicons/mstile-310x150.png" />
 <meta name="msapplication-square310x310logo" content="favicons/mstile-310x310.png" />
-
 </head>
 
 <body id="top">
@@ -99,9 +98,16 @@
 					<h1 class="animate-intro">
 						Reduce your taxes, while saving for the future
 					</h1>
-					<div class="video-container" id="muteYouTubeVideoPlayer"></div>	
+					<!--div class="video-container">
+						<div id="muteYouTubeVideoPlayer"></div>	
+					</div-->
+					<!--div id='wrap-player'-->
+    					<div class="video-container">
+        					<div id="player"></div>
+    					</div> 
+					<!--/div-->
 					<!--div class="video-container"> 
-	            		<iframe id="videoIf" src="https://www.youtube.com/embed/enoyj1zf2V8?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+	            		<iframe src="https://www.youtube.com/embed/enoyj1zf2V8?rel=0" frameborder="0" allowfullscreen></iframe>
             		</div-->
 
 			  	</div> <!-- /twelve --> 		   			
@@ -301,14 +307,14 @@
   ga('send', 'pageview');
 
 </script>
-<script async src="https://www.youtube.com/iframe_api"></script>
+<!--script async src="https://www.youtube.com/iframe_api"></script>
 <script>
  function onYouTubeIframeAPIReady() {
   var player;
   player = new YT.Player('muteYouTubeVideoPlayer', {
     videoId: 'enoyj1zf2V8', // YouTube Video ID
-    //width: 700,               // Player width (in px)
-    //height: 450,              // Player height (in px)
+    width: 100%,               // Player width (in px)
+    height: 100%,              // Player height (in px)
     playerVars: {
       autoplay: 1,        // Auto-play the video on load
       controls: 1,        // Show pause/play buttons in player
@@ -328,6 +334,62 @@
     }
   });
  }
+</script-->
+<script type="text/javascript">
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        playerVars: {
+        	autoplay: 1,
+        	modestbranding: 1,
+        	loop: 1,
+        	cc_load_policy: 0,
+        	iv_load_policy: 3,
+        	autohide: 0,
+        	rel: 0,
+            enablejsapi: 1,
+            disablekb: 1,
+            showinfo: 0,
+            controls: 1,
+            fs: 0,
+            
+        },
+        height: '100%',
+        width: '100%',
+        videoId: 'enoyj1zf2V8',
+        events: {
+            'onReady': onPlayerReady,
+            //'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+    event.target.mute();
+}
+
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+var done = false;
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+        setTimeout(stopVideo, 6000);
+        done = true;
+    }
+}
+function stopVideo() {
+    player.stopVideo();
+}
 </script>
 </body>
 
