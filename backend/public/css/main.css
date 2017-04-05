@@ -2624,7 +2624,7 @@ footer a:active {
 
 .video-container {
 	position:relative;
-	padding-bottom:35%;
+	padding-bottom:56.25%;
 	padding-top:10px;
 	height:0;
 	overflow:hidden;
@@ -2633,8 +2633,8 @@ footer a:active {
 .video-container iframe, .video-container object, .video-container embed {
 	position:absolute;
 	top:0;
-	left:125px;
-	width:75%;
+	left:0;
+	width:100%;
 	height:100%;
 }
 
