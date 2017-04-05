@@ -97,11 +97,11 @@
 		   		<h3 class="animate-intro">Introducing MoneyPenny</h3>
 			  		
 					<h1 class="animate-intro">
-						No Fee and Tax Free 401k for the self-employed
+						Reduce your taxes, while saving for the future
 					</h1>
-					<div id="muteYouTubeVideoPlayer"></div>	
+					<div class="video-container" id="muteYouTubeVideoPlayer"></div>	
 					<!--div class="video-container"> 
-	            		<iframe src="https://www.youtube.com/embed/enoyj1zf2V8?rel=0" frameborder="0" allowfullscreen></iframe>
+	            		<iframe id="videoIf" src="https://www.youtube.com/embed/enoyj1zf2V8?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
             		</div-->
 
 			  	</div> <!-- /twelve --> 		   			
@@ -301,15 +301,14 @@
   ga('send', 'pageview');
 
 </script>
-
 <script async src="https://www.youtube.com/iframe_api"></script>
 <script>
  function onYouTubeIframeAPIReady() {
   var player;
   player = new YT.Player('muteYouTubeVideoPlayer', {
     videoId: 'enoyj1zf2V8', // YouTube Video ID
-    width: 560,               // Player width (in px)
-    height: 316,              // Player height (in px)
+    //width: 700,               // Player width (in px)
+    //height: 450,              // Player height (in px)
     playerVars: {
       autoplay: 1,        // Auto-play the video on load
       controls: 1,        // Show pause/play buttons in player

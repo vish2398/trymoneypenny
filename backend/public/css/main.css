@@ -2623,20 +2623,23 @@ footer a:active {
 }
 
 .video-container {
+	overflow: hidden;
+}
+/*.video-container {
 	position:relative;
-	padding-bottom:56.25%;
-	padding-top:30px;
+	padding-bottom:35%;
+	padding-top:10px;
 	height:0;
 	overflow:hidden;
 }
 
-.video-container iframe, .video-container object, .video-container embed {
+.video-container iframe, .video-container object, .video-container embed, .video-container div {
 	position:absolute;
 	top:0;
-	left:0;
-	width:100%;
+	left:125px;
+	width:75%;
 	height:100%;
-}
+}*/
 
 .subscribe-message {
 	font-family: "roboto-light", sans-serif;
