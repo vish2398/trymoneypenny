@@ -25,12 +25,12 @@ function addSubscriber(email) {
 	var request = require("request");
 
 	var options = { method: 'POST',
-	  url: 'https://usxx.api.mailchimp.com/3.0/lists/REPLACE_WITH_REAL_ID/members',
+	  url: 'https://usxx.api.mailchimp.com/3.0/lists/id/members',
 	  headers: 
-	   { 'postman-token': 'REPLACE_WITH_REAL_TOKEN',
+	   { 'postman-token': 'tokenhere',
 	     'cache-control': 'no-cache',
 	     'content-type': 'application/json',
-	     authorization: 'Basic REPLACE_WITH_REAL_API_KEY' },
+	     authorization: 'Basic token' },
 	  body: { email_address: email, status: 'subscribed' },
 	  json: true };
 

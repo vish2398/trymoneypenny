@@ -76,9 +76,9 @@
 
 		   		<h3 class="animate-intro">Introducing MoneyPenny</h3>
 			  		
-					<h1 class="animate-intro">
-						Reduce your taxes, while saving for the future
-					</h1>
+					<h2 class="animate-intro">
+						No Fee and Tax Free 401k for the self-employed
+					</h2>
 					
     				<div class="video-container">
         				<div id="player"></div>
@@ -106,7 +106,7 @@
 				   			</div>
 				   			<!--div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_027625fe39b4e26f3442db2b9_2863e93640" tabindex="-1" value=""></div-->
 					   		<div class="col-four tab-full right animate-this"  data-animate="fadeInRight">
-					   			<input type="submit" value="Get Notified" name="subscribe" id="mc-embedded-subscribe" class="button large">
+					   			<input type="submit" id="getNotifiedButton" value="Get Notified" name="subscribe" id="mc-embedded-subscribe" class="button large">
 					   		</div>				   		
 	               	</div> <!-- /row -->	
 
@@ -183,7 +183,7 @@
 
 		   			<h2 class="">Why use MoneyPenny?</h2>
 
-		   			<p class="lead">If you recieve a 1099 form, you can use MoneyPenny to set up a no fee, tax free, 401K account. This allows you to save for the future, while reducing the amount you pay in taxes every year. Signing up takes a few minutes and we create a tailored retirement account to fit your needs.
+		   			<p class="lead">If you receive a 1099 form, you can use MoneyPenny to set up a no fee, tax free, 401K account. This allows you to save for the future, while reducing the amount you pay in taxes every year. Signing up takes a few minutes and we create a tailored retirement account to fit your needs.
 		   			</p>
 
 		   		</div>   		
@@ -281,6 +281,36 @@
   ga('create', 'UA-96861927-1', 'auto');
   ga('send', 'pageview');
 
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'ID_HERE'); // Insert your pixel ID here.
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=11111111&ev=PageView&noscript=1"
+/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+<!-- Google Code for Email Signup Conversion Page -->
+
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+
+<script type="text/javascript">
+  $('#getNotifiedButton').click(function() {
+    fbq('track', 'CompleteRegistration'); 
+    window.google_trackConversion({
+  		google_conversion_id: 11111111111, 
+  		google_remarketing_only: false
+});
+  });
 </script>
 
 <script type="text/javascript">

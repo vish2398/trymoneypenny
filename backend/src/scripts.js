@@ -2,7 +2,7 @@ var $ = require('jquery');
 
 $('form').submit(function(event) {
 	var userEmail = $('#mce-EMAIL').val();
-	//console.log(userEmail);
+	console.log(userEmail);
 	event.preventDefault();
 	$.ajax({
 		url: '/subscribe',
@@ -11,7 +11,7 @@ $('form').submit(function(event) {
 			email: userEmail
 		},
 		success: function(response) {
-
+  			
 		},
 		complete: function(response) {
 			$("#mce-EMAIL").val('');
